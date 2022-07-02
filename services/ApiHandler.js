@@ -4,7 +4,7 @@ const axios = require('axios');
 class CharactersApi {
   constructor() {
     this.api = axios.create({
-      baseURL: 'https://www.freetogame.com/api/games'
+      baseURL: 'https://www.freetogame.com/api/games' //actualització api
     });
   }
 
