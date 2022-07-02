@@ -1,18 +1,45 @@
-const { Schema, model } = require("mongoose");
+const mongoose = require("mongoose");
 
 // TODO: Please make sure you edit the user model to whatever makes sense in this case
-const gameSchema = new Schema(
+const gameSchema = new mongoose.Schema(
   {
-    id: Number,
-    title: String,
-    thumbnail: String,
-    short_description: String,
-    game_url: String,
-    genre: Number,
-    platform: String,
-    developer: String,
-    release_date: String,
-    freetogame_profile_url: String
+    id: {
+      type: Number
+    },
+    
+    title: {
+      type: String
+    },
+
+    thumbnail: {
+      type: String
+    },
+
+    short_description: {
+      type: String
+    },
+
+    game_url: {
+      type: String
+    },
+    genre: {
+      type: String
+    },
+
+    platform: {
+      type: String
+    },
+
+    developer: {
+      type: String
+    },
+
+    release_date: {
+      type: String
+    },
+    freetogame_profile_url: {
+      type: String
+    }
   }
 );
 
