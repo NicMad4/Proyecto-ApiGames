@@ -1,7 +1,7 @@
 document.addEventListener(
   "DOMContentLoaded",
   () => {
-    console.log("Proyecto-modelo JS imported successfully!");
+    console.log("Proyecto-apiGames JS imported successfully!");
   },
   false
 );
