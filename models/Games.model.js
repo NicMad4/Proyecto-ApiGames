@@ -13,9 +13,6 @@ const gameSchema = new Schema(
     developer: String,
     release_date: String,
     freetogame_profile_url: String
-  },
-  {
-    timestamps: true,
   }
 );
 
@@ -30,7 +27,6 @@ gameSchema.pre("save", function(next) {
     next();
 });
 
+const Games = mongoose.model("Games", dronSchema);
 
-// const Character = model("Character", userSchema);
-
-module.exports = model("Games", gameSchema);
+module.exports = Games;
