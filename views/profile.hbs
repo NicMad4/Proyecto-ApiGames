@@ -15,11 +15,17 @@
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="/profile">Profile</a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/auth/logout">logout</a>
+              </li>
             </ul>
           </div>
         </div>
       </nav>
 <h1>bienvenido {{user.username}}</h1>
+ 
+
+
 {{#each user.favorites}}
 <img src={{thumbnail}} alt={{title}}>
 <p>{{apiId}}</p>
