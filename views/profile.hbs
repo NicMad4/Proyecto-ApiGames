@@ -15,20 +15,21 @@
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="/profile">Profile</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/auth/signup">Signup</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/auth/login">Login</a>
-              </li>
             </ul>
           </div>
         </div>
       </nav>
 <h1>bienvenido {{user.username}}</h1>
 {{#each user.favorites}}
-<img src={{image}} alt={{name}}>
-<p>{{name}}</p>
+<img src={{thumbnail}} alt={{title}}>
+<p>{{apiId}}</p>
+<p>{{title}}</p>
+<p>{{genre}}</p>
+<p>{{platform}}</p>
+<p>{{developer}}</p>
+<p>{{release_date}}</p>
+<p>{{short_description}}</p>
+<p>{{freetogame_profile_url}}</p>
 <form action = "/delete-favorite" method="POST">
     <input type="hidden" name="id" value={{_id}}>
 

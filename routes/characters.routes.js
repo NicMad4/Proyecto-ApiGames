@@ -13,9 +13,9 @@ router.get('/characters',(req, res)=>{
     CharactersAPI
     .getAllCharacters()
     .then((allCharacters) => {
-        console.log(allCharacters)
+        
         res.render('characters/list', {characters: allCharacters.data} )
-    
+        // console.log(allCharacters)
     })
     .catch(err => console.log(err));
     
@@ -24,10 +24,15 @@ router.get('/characters',(req, res)=>{
 })
 
 router.post("/add-favorite", isLoggedIn ,(req, res) =>{
-const query = { name, status, species, gender, image, apiId } = req.body
+   
+const query = ({ apiId, title, thumbnail, short_description, game_url, genre, platform, developer, release_date, freetogame_profile_url } = req.body)
+
+console.log(query,"hola")
+
 const idToCheck = req.body.apiId;
     Character.find({apiId: idToCheck})
 	.then (charArray => {
+        console.log("adios",charArray)
 		//comprobar si ese apiId ya esta en db characters
 		if (charArray.length === 0) {
             Character

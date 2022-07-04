@@ -3,7 +3,7 @@ const { Schema, model } = require("mongoose");
 // TODO: Please make sure you edit the user model to whatever makes sense in this case
 const gameSchema = new Schema(
   {
-    id: Number,
+    apiId: Number,
     title: String,
     thumbnail: String,
     short_description: String,
@@ -19,7 +19,7 @@ const gameSchema = new Schema(
   }
 );
 
-
+/*
 gameSchema.pre("save", function(next) {
   // console.log(this)
 
@@ -28,9 +28,9 @@ gameSchema.pre("save", function(next) {
   this.name = nameToUpper
 
     next();
-});
+});*/
 
 
 // const Character = model("Character", userSchema);
 
-module.exports = model("Game", gameSchema);
+module.exports = model("Character", gameSchema);
