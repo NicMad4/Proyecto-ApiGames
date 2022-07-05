@@ -76,6 +76,15 @@ router.post("/delete-favorite",isLoggedIn,(req,res)=>{
     })
     .catch(err => console.log(err))
 })
+router.post("/characters",isLoggedIn,(req,res)=>{
+    const query = ({score,average_score,apiId} = req.body)
+    
+   /* User.findByIdAndUpdate(req.user._id,{$pull : {favorites : id}})
+    .then(()=>{
+        res.redirect("/profile")
+    })
+    .catch(err => console.log(err))*/
+})
 
 /**
  * ---arrays
