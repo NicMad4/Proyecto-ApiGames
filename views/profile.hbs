@@ -36,9 +36,53 @@
 <p>{{release_date}}</p>
 <p>{{short_description}}</p>
 <p>{{freetogame_profile_url}}</p>
+<div class="card">
+  <div class="card-body">
+     <h3 class="bi bi-controller" onclick="calificar(this)" style="cursor: pointer; display: inline;" id="1estrella"></h3>
+     <h3 class="bi bi-controller" onclick="calificar(this)" style="cursor: pointer; display: inline;" id="2estrella"></h3>
+     <h3 class="bi bi-controller" onclick="calificar(this)" style="cursor: pointer; display: inline;" id="3estrella"></h3>
+     <h3 class="bi bi-controller" onclick="calificar(this)" style="cursor: pointer; display: inline;" id="4estrella"></h3>
+     <h3 class="bi bi-controller" onclick="calificar(this)" style="cursor: pointer; display: inline;" id="5estrella"></h3><br /><br />
+     <button class="btn btn-primary">Calificar</button>
+  </div>
+  
+</div>
+
+{{!-- <fieldset class="rating">
+    <input type="radio" id="star5" class="bi bi-controller" name="rating" value="5" />
+    <label for="star5">5 stars</label>
+    <input type="radio" id="star4" name="rating" value="4" />
+    <label for="star4">4 stars</label>
+    <input type="radio" id="star3" name="rating" value="3" />
+    <label for="star3">3 stars</label>
+    <input type="radio" id="star2" name="rating" value="2" />
+    <label for="star2">2 stars</label>
+    <input type="radio" id="star1" name="rating" value="1" />
+    <label for="star1">1 star</label>
+</fieldset> --}}
+
+
+
+
 <form action = "/delete-favorite" method="POST">
     <input type="hidden" name="id" value={{_id}}>
 
 <button type="submit">borrar favorito</button>
 </form>
 {{/each}}
+<script>
+  let contador;
+  function calificar(item) {
+    console.log(item);
+    contador =item.id[0]; // captura el primer caracter
+    let nombre = item.id.substring(1); // 4 'estrella ' captura todo menos el primer caracter
+    for(let i = 0; i < 5; i++) {
+      if(i< contador) {
+        document.getElementById((i+1) + nombre).style.color="orange";
+      } else {
+        document.getElementById((i+1) + nombre).style.color="#000000";
+      }
+    }
+  }
+</script>
+
