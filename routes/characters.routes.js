@@ -83,7 +83,7 @@ router.post("/ratings",isLoggedIn,(req,res)=>{
     
     console.log(score)
     Score.create({score:score,
-        //buscar por id del juego
+        //buscar por id del jue
         //update del score o sea push del score actual + el nuevo
         //average_score:score/score.lenght,
         apiId:apiId})
