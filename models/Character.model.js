@@ -12,7 +12,8 @@ const gameSchema = new Schema(
     platform: String,
     developer: String,
     release_date: String,
-    freetogame_profile_url: String
+    freetogame_profile_url: String,
+
   },
   {
     timestamps: true,
