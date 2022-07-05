@@ -42,12 +42,14 @@
 {{!-- puntuación --}}
 <div class="card">
   <div class="card-body">
-    <form action="" method="POST">
-        <h3 class="bi bi-controller"  onclick="calificar(this)" id="1{{_id}}" style="cursor: pointer; display: inline;"><input value="1" type="hidden" name="calificar"></input></h3>
-        <h3 class="bi bi-controller"  onclick="calificar(this)" id="2{{_id}}" style="cursor: pointer; display: inline;"><input value="2" type="hidden" name="calificar"></input></h3>
-        <h3 class="bi bi-controller"  onclick="calificar(this)" id="3{{_id}}" style="cursor: pointer; display: inline;"><input value="3" type="hidden" name="calificar"></input></h3>
-        <h3 class="bi bi-controller"  onclick="calificar(this)" id="4{{_id}}" style="cursor: pointer; display: inline;"><input value="4" type="hidden" name="calificar"></input></h3>
-        <h3 class="bi bi-controller"  onclick="calificar(this)" id="5{{_id}}" style="cursor: pointer; display: inline;"><input value="5" type="hidden" name="calificar"></input></h3>
+    <form action="/ratings" method="POST">
+        <h3 class="bi bi-controller"  onclick="calificar(this)" id="1{{_id}}" style="cursor: pointer; display: inline;"></h3>
+        <h3 class="bi bi-controller"  onclick="calificar(this)" id="2{{_id}}" style="cursor: pointer; display: inline;"></h3>
+        <h3 class="bi bi-controller"  onclick="calificar(this)" id="3{{_id}}" style="cursor: pointer; display: inline;"></h3>
+        <h3 class="bi bi-controller"  onclick="calificar(this)" id="4{{_id}}" style="cursor: pointer; display: inline;"></h3>
+        <h3 class="bi bi-controller"  onclick="calificar(this)" id="5{{_id}}" style="cursor: pointer; display: inline;"></h3>
+        <input id="scoreInput" type="hidden" name="score"></input>
+        <input value="{{apiId}}" type="hidden" name="apiId"></input>
           <br>
           <br>
        <button class="btn btn-primary" type="submit">Calificar</button>
@@ -57,9 +59,9 @@
 <script>
   let contador;
   function calificar(item) {
-    //console.log(item);
     contador =item.id[0]; // captura el primer caracter
     let nombre = item.id.substring(1); // 4 'estrella ' captura todo menos el primer caracter
+    
     for(let i = 0; i < 5; i++) {
     console.log(i);
       if(i< contador) {
@@ -68,7 +70,10 @@
         document.getElementById((i+1) + nombre).style.color="#000000";
       }
     }
+    document.getElementById("scoreInput").value = contador;
   }
+
+
 </script>
 {{!-- puntuación --}}
 

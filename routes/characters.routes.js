@@ -3,9 +3,11 @@ const router = require("express").Router();
 const alert = require("alert");
 const isLoggedIn = require("../middleware/isLoggedIn");
 const Character = require("../models/Character.model");
+const Score = require("../models/Score.model");
 const User = require("../models/User.model");
 const Api = require("../services/ApiHandler");
 const CharactersAPI = new Api()
+
 
 router.get('/characters',(req, res)=>{
     
@@ -76,9 +78,18 @@ router.post("/delete-favorite",isLoggedIn,(req,res)=>{
     })
     .catch(err => console.log(err))
 })
-router.post("/characters",isLoggedIn,(req,res)=>{
-    const query = ({score,average_score,apiId} = req.body)
+router.post("/ratings",isLoggedIn,(req,res)=>{
+    const query = ({score,apiId} = req.body)
     
+    console.log(score)
+    Score.create({score:score,
+        //buscar por id del juego
+        //update del score o sea push del score actual + el nuevo
+        //average_score:score/score.lenght,
+        apiId:apiId})
+    .then((result)=>{
+        res.render("profile")
+    })
    /* User.findByIdAndUpdate(req.user._id,{$pull : {favorites : id}})
     .then(()=>{
         res.redirect("/profile")
