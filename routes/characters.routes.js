@@ -90,6 +90,23 @@ router.post("/ratings",isLoggedIn,(req,res)=>{
     .then((result)=>{
         res.render("profile")
     })
+
+    
+//inicioprueba
+// Score.findById(req.body.apiId)
+// .then((juegoEncontrado)=>{
+//     if(!juegoEncontrado.ratings.includes(req.body.apiId)){
+//         Score.findByIdAndUpdate(req.body.apiId,{
+//             $push:{ratings: score},
+//             }).then(()=>{
+//                 res.redirect("/ratings");
+//             }),
+//     }
+// })
+//finprueba
+
+
+
    /* User.findByIdAndUpdate(req.user._id,{$pull : {favorites : id}})
     .then(()=>{
         res.redirect("/profile")
