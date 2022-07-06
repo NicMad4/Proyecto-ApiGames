@@ -22,7 +22,8 @@
           </div>
         </div>
       </nav>
-<h1>bienvenido {{user.username}}</h1>
+      <div style="text-align: center; justify-content: center;">
+        <h1 style="color: #ffffff; font-weight: 900; margin-top:25px;">Bienvenido {{user.username}}</h1>
  
 
 
@@ -30,24 +31,24 @@
 <br>
 <br>
 <img src={{thumbnail}} alt={{title}}>
-<p>{{apiId}}</p>
-<p>{{title}}</p>
-<p>{{genre}}</p>
-<p>{{platform}}</p>
-<p>{{developer}}</p>
-<p>{{release_date}}</p>
-<p>{{short_description}}</p>
-<p>{{freetogame_profile_url}}</p>
+<p style="color: #ffffff; margin-top:25px;">{{apiId}}</p>
+<p style="color: #ffffff; font-weight:900;">{{title}}</p>
+<p style="color: #ffffff;">{{genre}}</p>
+<p style="color: #ffffff;">{{platform}}</p>
+<p style="color: #ffffff;">{{developer}}</p>
+<p style="color: #ffffff;">{{release_date}}</p>
+<p style="color: #ffffff;">{{short_description}}</p>
+<p style="color: #ffffff;">{{freetogame_profile_url}}</p>
 
 {{!-- puntuación --}}
-<div class="card">
-  <div class="card-body">
+<div>
+  <div >
     <form action="/ratings" method="POST">
-        <h3 class="bi bi-controller"  onclick="calificar(this)" id="1{{_id}}" style="cursor: pointer; display: inline;"></h3>
-        <h3 class="bi bi-controller"  onclick="calificar(this)" id="2{{_id}}" style="cursor: pointer; display: inline;"></h3>
-        <h3 class="bi bi-controller"  onclick="calificar(this)" id="3{{_id}}" style="cursor: pointer; display: inline;"></h3>
-        <h3 class="bi bi-controller"  onclick="calificar(this)" id="4{{_id}}" style="cursor: pointer; display: inline;"></h3>
-        <h3 class="bi bi-controller"  onclick="calificar(this)" id="5{{_id}}" style="cursor: pointer; display: inline;"></h3>
+        <h3 class="bi bi-controller"  onclick="calificar(this)" id="1{{_id}}" style="cursor: pointer; display: inline; color: #ffffff;"></h3>
+        <h3 class="bi bi-controller"  onclick="calificar(this)" id="2{{_id}}" style="cursor: pointer; display: inline; color: #ffffff;"></h3>
+        <h3 class="bi bi-controller"  onclick="calificar(this)" id="3{{_id}}" style="cursor: pointer; display: inline; color: #ffffff;"></h3>
+        <h3 class="bi bi-controller"  onclick="calificar(this)" id="4{{_id}}" style="cursor: pointer; display: inline; color: #ffffff;"></h3>
+        <h3 class="bi bi-controller"  onclick="calificar(this)" id="5{{_id}}" style="cursor: pointer; display: inline; color: #ffffff;"></h3>
         <input id="scoreInput" type="hidden" name="score"></input>
         <input value="{{apiId}}" type="hidden" name="apiId"></input>
           <br>
@@ -67,7 +68,7 @@
       if(i< contador) {
         document.getElementById((i+1) + nombre).style.color="orange";
       } else {
-        document.getElementById((i+1) + nombre).style.color="#000000";
+        document.getElementById((i+1) + nombre).style.color="#ffffff";
       }
     }
     document.getElementById("scoreInput").value = contador;
@@ -86,5 +87,7 @@
 </form>
 {{!-- boton de borrar --}}
 {{/each}}
+      </div>
+
 
 
