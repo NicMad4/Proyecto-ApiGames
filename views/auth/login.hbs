@@ -19,17 +19,61 @@
           </div>
         </div>
       </nav>
-<form action="/auth/login" method="POST">
-   <label> Username
+<form id="log"action="/auth/login" method="POST">
+   <label class="username"> Username
       <input type="text" name="username">
    </label>
-   <label> Password
+   <label class="password"> Password
       <input type="password" name="password">
    </label>
 
    <button type="submit">Submit</button>
+   <br>
+   <h5>No estas registrado?hazlo <a href="/auth/signup">aqui!</a></h5>
 </form>
-<h3>No estas registrado?hazlo <a href="/auth/signup">aqui!</a></h3>
+{{!-- inicio prueba --}}
+ {{!-- <div class="container">
+	<div class="d-flex justify-content-center h-100">
+		<div class="card">
+			<div class="card-header">
+				<h3>Sign In</h3>
+				
+			</div>
+			<div class="card-body">
+				
+        <form >
+					  <div class="input-group form-group">
+						     <div class="input-group-prepend">
+							       <span class="input-group-text"><i class="fas fa-user"></i></span>
+						     </div>
+						     <input type="text" class="form-control" placeholder="username">
+					  </div>
+
+					<div class="input-group form-group">
+						  <div class="input-group-prepend">
+							    <span class="input-group-text"><i class="fas fa-key"></i></span>
+						  </div>
+						  <input type="password" class="form-control" placeholder="password">
+					</div>
+				
+			    <div class="form-group">
+						<a href="/auth/login"  class="btn float-right login_btn">Login</a>
+					</div>
+				</form>
+			
+      </div>
+
+			<div class="card-footer">
+				<div class="d-flex justify-content-center links">
+					Don't have an account?<a href="/auth/signup">Sign Up</a>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+</div> --}}
+{{!-- fin prueba --}}
+
 {{#if errorMessage}}
 <p class="error">{{errorMessage}}</p>
 {{/if}}
