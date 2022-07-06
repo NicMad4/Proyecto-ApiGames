@@ -19,16 +19,16 @@
           </div>
         </div>
       </nav>
-<div class='container'>
-  <h1>Games list</h1>
+<div align="center" class='container'>
+  <h1 style="color: #ffffff; margin: 20px 0 0 0; font-weight: 900; font-size: 55px">Games List</h1>
   <div class='row row row-cols-1 row-cols-sm-2 row-cols-md-3 g-5 my-5'>
   {{!-- image name status --}}
     {{#each characters}}
     <div class='col'>
-      <div class='card shadow-sm'>
+      <div class='card shadow-sm text-center'>
         <img src="{{thumbnail}}" alt="">
-        <p>{{title}}</p>
-        <p>{{characters.id}}</p>
+        <h5 style="color: #ffffff; padding-top: 25px; padding-bottom:20px;">{{title}}</h5>
+        
         <form action="/add-favorite" method="POST">
           
           <input type="hidden" name="title" value="{{title}}">
@@ -42,7 +42,7 @@
           <input type="hidden" name="release_date" value="{{release_date}}">
           <input type="hidden" name="freetogame_profile_url" value="{{freetogame_profile_url}}">
 
-          <button type="submit">Añadir a favoritos</button>
+          <button id="button-add">AÑADIR A FAVORITOS</button>
         </form>
       </div>
     </div>
