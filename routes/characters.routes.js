@@ -78,19 +78,60 @@ router.post("/delete-favorite",isLoggedIn,(req,res)=>{
     })
     .catch(err => console.log(err))
 })
-router.post("/ratings",isLoggedIn,(req,res)=>{
-    const query = ({score,apiId} = req.body)
-    
-    console.log(score)
-    Score.create({score:score,
-        //buscar por id del jue
-        //update del score o sea push del score actual + el nuevo
-        //average_score:score/score.lenght,
-        apiId:apiId})
-    .then((result)=>{
-        res.render("profile")
-    })
 
+
+
+router.get('/ratings/:id',(req, res)=>{
+    let rating=[]
+    Score.find({apiId:req.params.id})
+
+
+    .then((scores)=>{
+        scores.forEach((score)=>{
+            rating.push(score.score)
+            
+        })
+        let totalScore=0
+        rating.forEach((score)=>{totalScore+=score
+            
+        })
+        let average=(totalScore/rating.length).toFixed(2)
+        
+      
+        //encontrar juego modificar media
+        Character.findOneAndUpdate({apiId:req.params.id},{ rating_av : average})
+        //hacer redirect
+        .then(()=>{
+            Character.find()
+            .then((game)=>{
+                res.render("ratings",{game})
+            })
+           
+        })
+           
+       
+       
+    })
+    .catch(err => console.log(err))
+    
+            
+   
+
+
+
+
+})
+
+
+router.post("/ratings",isLoggedIn,(req,res)=>{
+    
+   
+    Score.create(req.body)
+    
+    .then((score)=>{
+        res.redirect("ratings/"+score.apiId)
+    })
+  
     
 //inicioprueba
 // Score.findById(req.body.apiId)

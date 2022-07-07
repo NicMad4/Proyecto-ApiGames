@@ -13,6 +13,7 @@ const gameSchema = new Schema(
     developer: String,
     release_date: String,
     freetogame_profile_url: String,
+    rating_av:{type:Number,default:0}
 
   },
   {
