@@ -102,7 +102,7 @@ router.get('/ratings/:id',(req, res)=>{
         Character.findOneAndUpdate({apiId:req.params.id},{ rating_av : average})
         //hacer redirect
         .then(()=>{
-            Character.find()
+            Character.find().sort([['rating_av', -1]])
             .then((game)=>{
                 res.render("ratings",{game})
             })
