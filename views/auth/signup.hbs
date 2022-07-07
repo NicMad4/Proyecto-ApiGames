@@ -19,17 +19,16 @@
           </div>
         </div>
       </nav>
-<form action="/auth/signup" method="POST">
-   <label> Username
+      
+<form id="log" action="/auth/signup" method="POST">
+   <label style="font-size:24px; font-weight:900;"> Username
       <input type="text" name="username">
    </label>
-   <label> Password
+   <label style="font-size:24px; font-weight:900;"> Password
       <input type="password" name="password">
    </label>
-<label> email
-      <input type="email" name="email">
-   </label>
-   <button type="submit">Submit</button>
+
+   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 
 {{#if errorMessage}}

@@ -1,6 +1,9 @@
-<h1>lista de los 5 mas votados</h1>
+<div id="ratings" style="align-items: center; justify-content: center;">
+    <h1 style="color:#ffffff;">Hall of Fame</h1>
 {{#each game}}
-<h1>nombre juego {{this.title}}</h1>
-<h1>imagen {{this.thumbnail}}</h1>
-<h1>puntuación media {{this.rating_av}}</h1>
+<h2 style="color: #ffffff; font-weight:900; margin-top: 50px;">Nombre {{this.title}}</h2>
+<img src={{thumbnail}} alt={{title}}>
+<h3 style="color:#ffffff;">Puntuación {{this.rating_av}}</h3>
 {{/each}}
+</div>
+
