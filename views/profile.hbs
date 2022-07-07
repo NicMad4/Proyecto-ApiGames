@@ -44,12 +44,23 @@
 <div>
   <div >
     <form action="/ratings" method="POST">
-        <h3 class="bi bi-controller"  onclick="calificar(this)" id="1{{_id}}" style="cursor: pointer; display: inline; color: #ffffff;"></h3>
-        <h3 class="bi bi-controller"  onclick="calificar(this)" id="2{{_id}}" style="cursor: pointer; display: inline; color: #ffffff;"></h3>
-        <h3 class="bi bi-controller"  onclick="calificar(this)" id="3{{_id}}" style="cursor: pointer; display: inline; color: #ffffff;"></h3>
-        <h3 class="bi bi-controller"  onclick="calificar(this)" id="4{{_id}}" style="cursor: pointer; display: inline; color: #ffffff;"></h3>
-        <h3 class="bi bi-controller"  onclick="calificar(this)" id="5{{_id}}" style="cursor: pointer; display: inline; color: #ffffff;"></h3>
-        <input id="scoreInput" type="hidden" name="score"></input>
+       
+        <input type="radio" name="score" value="1" > 
+       1
+        </input>
+        <input type="radio" name="score" value="2" > 
+       2
+        </input>
+        <input type="radio" name="score" value="3" > 
+       3
+        </input>
+        <input type="radio" name="score" value="4" > 
+       4
+        </input>
+        <input type="radio" name="score" value="5" > 
+       5
+        </input>
+        {{!-- <input id="scoreInput" type="hidden" name="score"></input> --}}
         <input value="{{apiId}}" type="hidden" name="apiId"></input>
           <br>
           <br>
@@ -57,25 +68,7 @@
     </form>
   </div>
   </div>
-<script>
-  let contador;
-  function calificar(item) {
-    contador =item.id[0]; // captura el primer caracter
-    let nombre = item.id.substring(1); // 4 'estrella ' captura todo menos el primer caracter
-    
-    for(let i = 0; i < 5; i++) {
-    console.log(i);
-      if(i< contador) {
-        document.getElementById((i+1) + nombre).style.color="orange";
-      } else {
-        document.getElementById((i+1) + nombre).style.color="#ffffff";
-      }
-    }
-    document.getElementById("scoreInput").value = contador;
-  }
 
-
-</script>
 {{!-- puntuación --}}
 
 {{!-- boton de borrar --}}
